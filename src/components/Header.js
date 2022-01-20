@@ -3,7 +3,6 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import Avatar from '@mui/material/Avatar';
 
 
 const Header = ({todos}) => {
@@ -11,7 +10,7 @@ const Header = ({todos}) => {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>          
-        <Avatar alt="Remy Sharp" src="/iekalogo.png" variant="square" sx={{ width: 160, height: 66 }} />
+        <img alt="Remy Sharp" src="https://monir2022.github.io/Ikea-shopping-list/iekalogo.png" style={{ width: 160, height: 66 }} />
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Shopping List
           </Typography>

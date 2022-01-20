@@ -26,7 +26,6 @@ const App = () => {
 
   useEffect(() => {
     // fires when todos array gets updated
-    console.log("MNM")
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos));
     
   }, [todos]);
