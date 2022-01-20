@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Ikea-shopping-list/precache-manifest.4c6cb757cad326ee25f90ef91627f439.js"
+  "/Ikea-shopping-list/precache-manifest.be53680d9be4ecaabaae445bc2a9412a.js"
 );
 
 self.addEventListener('message', (event) => {
