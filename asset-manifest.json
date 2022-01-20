@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/Ikea-shopping-list/static/css/main.52e93018.chunk.css",
+    "main.js": "/Ikea-shopping-list/static/js/main.9b7652b4.chunk.js",
+    "main.js.map": "/Ikea-shopping-list/static/js/main.9b7652b4.chunk.js.map",
+    "runtime~main.js": "/Ikea-shopping-list/static/js/runtime~main.dc5cc30f.js",
+    "runtime~main.js.map": "/Ikea-shopping-list/static/js/runtime~main.dc5cc30f.js.map",
+    "static/js/2.dfa3fd32.chunk.js": "/Ikea-shopping-list/static/js/2.dfa3fd32.chunk.js",
+    "static/js/2.dfa3fd32.chunk.js.map": "/Ikea-shopping-list/static/js/2.dfa3fd32.chunk.js.map",
+    "static/js/3.673e4a56.chunk.js": "/Ikea-shopping-list/static/js/3.673e4a56.chunk.js",
+    "static/js/3.673e4a56.chunk.js.map": "/Ikea-shopping-list/static/js/3.673e4a56.chunk.js.map",
+    "index.html": "/Ikea-shopping-list/index.html",
+    "precache-manifest.09696fc0406f0924f3a2dd6197fdf93d.js": "/Ikea-shopping-list/precache-manifest.09696fc0406f0924f3a2dd6197fdf93d.js",
+    "service-worker.js": "/Ikea-shopping-list/service-worker.js",
+    "static/css/main.52e93018.chunk.css.map": "/Ikea-shopping-list/static/css/main.52e93018.chunk.css.map"
+  }
+}
