@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "eeb3fa336027667634b482d50c2df3de",
+    "revision": "2824201c29590fdca6b965bea9da73fe",
     "url": "/Ikea-shopping-list/index.html"
   },
   {
-    "revision": "ec1f494a4eee0cbf2e3d",
+    "revision": "9b1397a0e0882b69ca98",
     "url": "/Ikea-shopping-list/static/css/main.52e93018.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Ikea-shopping-list/static/js/3.673e4a56.chunk.js"
   },
   {
-    "revision": "ec1f494a4eee0cbf2e3d",
-    "url": "/Ikea-shopping-list/static/js/main.9b7652b4.chunk.js"
+    "revision": "9b1397a0e0882b69ca98",
+    "url": "/Ikea-shopping-list/static/js/main.6dbfa955.chunk.js"
   },
   {
     "revision": "3d404b5381faa6a220c6",
