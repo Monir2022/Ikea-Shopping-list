@@ -26,6 +26,7 @@ const App = () => {
 
   useEffect(() => {
     // fires when todos array gets updated
+    console.log("MNM")
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos));
     
   }, [todos]);
@@ -67,17 +68,19 @@ const App = () => {
     <div className="App">
       <Header todos={todos}/>
         
-      <Button style={{marginTop:"40px"}} variant="contained" onClick={formShowHide} > {buttonText} </Button>      
+      <Button style={{marginTop:"40px", borderRadius: "20px"}} variant="contained" onClick={formShowHide} > {buttonText} </Button>      
       {viewForm && <TodoForm addTodo={addTodo} />}
-      {todos.length>0 ? (<TodoList
+
+
+      { todos.length > 0 ? (<TodoList
         title = " "
         todos={todos.filter(todo => todo.completed === false)}
         removeTodo={removeTodo}
         toggleComplete={toggleComplete}
-      />):<h1>Please Add Item</h1>}
+      />) : (<h1>Please Add Item</h1>)}
 
 
-     <Button variant="contained" onClick={showHide}> {buttonComplete} Completed task </Button>
+     <Button style={{marginTop:"40px", borderRadius: "20px"}} variant="contained" onClick={showHide}> {buttonComplete} Completed task </Button>
 
      {view && (<TodoList
         title = " "
