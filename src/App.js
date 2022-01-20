@@ -9,7 +9,7 @@ import Button from '@mui/material/Button';
 
 const LOCAL_STORAGE_KEY = "react-todo-list-todos";
 
-function App() {
+const App = () => {
   const [todos, setTodos] = useState([]);
   const [view, setview] = useState(false);
   const [viewForm, setViewForm] = useState(false);
@@ -30,23 +30,22 @@ function App() {
     
   }, [todos]);
 
-  function addTodo(todo) {
+  const addTodo =(todo) => {
     // adds new todo to beginning of todos array
     setTodos([todo, ...todos]);
   }
-  function showHide() {
+  const showHide = () => {
     setview(!view);
     !view ? setButtonComplete("Hide") : setButtonComplete("Show");
     
   }
 
-  function formShowHide() {
+  const formShowHide = () => {
     setViewForm(!viewForm);
-     !viewForm ? setButtonText("Hide Form") : setButtonText("View Form to Add Item");
-     
+     !viewForm ? setButtonText("Hide Form") : setButtonText("View Form to Add Item");     
   }
 
-  function toggleComplete(id) {
+  const toggleComplete =(id)=> {
     setTodos(
       todos.map(todo => {
         if (todo.id === id) {
@@ -60,7 +59,7 @@ function App() {
     );
   }
 
-  function removeTodo(id) {
+  const removeTodo = (id) => {
     setTodos(todos.filter(todo => todo.id !== id));
   }
 
@@ -68,33 +67,24 @@ function App() {
     <div className="App">
       <Header todos={todos}/>
         
-        <Button style={{marginTop:"10px"}} variant="contained" onClick={formShowHide} > {buttonText} </Button>
-      
-        {viewForm && <TodoForm addTodo={addTodo} />}
-
-
-
+      <Button style={{marginTop:"40px"}} variant="contained" onClick={formShowHide} > {buttonText} </Button>      
+      {viewForm && <TodoForm addTodo={addTodo} />}
       {todos.length>0 ? (<TodoList
-        title = "Yet to Done"
+        title = " "
         todos={todos.filter(todo => todo.completed === false)}
         removeTodo={removeTodo}
         toggleComplete={toggleComplete}
-      />): <h1>Please Add Item</h1>}
+      />):<h1>Please Add Item</h1>}
 
 
-
-
-     <Button variant="contained" onClick={showHide}> {buttonComplete} completed Task</Button>
+     <Button variant="contained" onClick={showHide}> {buttonComplete} Completed task </Button>
 
      {view && (<TodoList
-        title = "Completed Task"
+        title = " "
         todos={todos.filter(todo => todo.completed === true)}
         removeTodo={removeTodo}
         toggleComplete={toggleComplete}
       />)}
-
-
-
     </div>
   );
 }

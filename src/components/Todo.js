@@ -1,13 +1,13 @@
 import { Checkbox, IconButton, ListItem, Typography } from "@material-ui/core";
-import CloseIcon from "@material-ui/icons/Close";
+import Delete from "@mui/icons-material/Delete";
 import React from "react";
 
-function Todo({ todo, toggleComplete, removeTodo }) {
-  function handleCheckboxClick() {
+const Todo= ({ todo, toggleComplete, removeTodo })=> {
+  const handleCheckboxClick = () => {
     toggleComplete(todo.id);
   }
 
-  function handleRemoveClick() {
+  const handleRemoveClick = ()=> {
     removeTodo(todo.id);
   }
   
@@ -20,16 +20,12 @@ function Todo({ todo, toggleComplete, removeTodo }) {
           textDecoration: todo.completed ? "line-through" : null
         }}
       >
-         Name: {todo.task}- Price:{todo.price}
-        
+         {todo.task}:{todo.price} SEK        
       </Typography>
-
-
       <IconButton onClick={handleRemoveClick}>
-        <CloseIcon />
+        <Delete/>
       </IconButton>
     </ListItem>
   );
 }
-
 export default Todo;
