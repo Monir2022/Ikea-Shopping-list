@@ -2,30 +2,31 @@ import { Checkbox, IconButton, ListItem, Typography } from "@material-ui/core";
 import Delete from "@mui/icons-material/Delete";
 import React from "react";
 
-const Todo= ({ todo, toggleComplete, removeTodo })=> {
+// Formatting -1 some spaces are not aligned
+const Todo = ({ todo, toggleComplete, removeTodo }) => {
   const handleCheckboxClick = () => {
     toggleComplete(todo.id);
-  }
+  };
 
-  const handleRemoveClick = ()=> {
+  const handleRemoveClick = () => {
     removeTodo(todo.id);
-  }
-  
+  };
+
   return (
-    <ListItem >
+    <ListItem>
       <Checkbox checked={todo.completed} onClick={handleCheckboxClick} />
       <Typography
         variant="body1"
         style={{
-          textDecoration: todo.completed ? "line-through" : null
+          textDecoration: todo.completed ? "line-through" : null,
         }}
       >
-         {todo.task}:{todo.price} SEK        
+        {todo.task}:{todo.price} SEK
       </Typography>
       <IconButton onClick={handleRemoveClick}>
-        <Delete/>
+        <Delete />
       </IconButton>
     </ListItem>
   );
-}
+};
 export default Todo;
