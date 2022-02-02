@@ -5,6 +5,8 @@ import Header from "./components/Header";
 import TodoForm from "./components/TodoForm";
 import TodoList from "./components/TodoList";
 import Button from '@mui/material/Button';
+import SortProducts from "./components/SortProducts";
+
 
 
 const LOCAL_STORAGE_KEY = "react-todo-list-todos";
@@ -16,24 +18,21 @@ const App = () => {
   const [buttonText, setButtonText] = useState("View Form to Add Item");
   const [buttonComplete, setButtonComplete] = useState("Show");
 
-  useEffect(() => {
-    // fires when app component mounts to the DOM
+  useEffect(() => {    
     const storageTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
     if (storageTodos) {
       setTodos(storageTodos);
     }
   }, []);
 
-  useEffect(() => {
-    // fires when todos array gets updated
-    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos));   
-    
+  useEffect(() => {   
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos));       
   },[todos]);
 
-  const addTodo =(todo) => {
-    // adds new todo to beginning of todos array
-    setTodos([todo, ...todos]);
+  const addTodo =(todo) => {    
+    setTodos([...todos, todo]);
   }
+
   const showHide = () => {
     setview(!view);
     !view ? setButtonComplete("Hide") : setButtonComplete("Show");
@@ -81,6 +80,9 @@ const App = () => {
         removeTodo={removeTodo}
         toggleComplete={toggleComplete}
       />)}
+
+      
+      <SortProducts todos ={todos} setTodos={setTodos}/>
     </div>
   );
 }
