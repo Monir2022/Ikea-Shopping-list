@@ -17,16 +17,23 @@ const TodoForm =({ addTodo }) => {
   }
 
   const handlePriceInputChange = (e)=> {
+
+    if(e.target.value > 0){
+      setTodo({ ...todo, price: e.target.value });
+    } else 
+         alert("Price need to be a positive number")
+      
+      
     // e.target.value contains new input from onChange
     // event for input elements
-    setTodo({ ...todo, price: e.target.value });
+     
   }
 
 
   const handleSubmit=(e) => {
     e.preventDefault(); // prevents browser refresh
     // trim() gets rid of string whitespace
-    if (todo.task.trim()) {
+    if (todo.task.trim() && todo.price.trim()) {
       addTodo({ ...todo, id: uuid() });
       setTodo({ ...todo, task: "", price: "" });
       

@@ -26,9 +26,9 @@ const App = () => {
 
   useEffect(() => {
     // fires when todos array gets updated
-    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos));
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos));   
     
-  }, [todos]);
+  },[todos]);
 
   const addTodo =(todo) => {
     // adds new todo to beginning of todos array
@@ -45,19 +45,16 @@ const App = () => {
      !viewForm ? setButtonText("Hide Form") : setButtonText("View Form to Add Item");     
   }
 
-  const toggleComplete =(id)=> {
-    setTodos(
-      todos.map(todo => {
-        if (todo.id === id) {
-          return {
-            ...todo,
-            completed: !todo.completed
-          };
-        }
-        return todo;
-      })
-    );
-  }
+  const toggleComplete = (id)=> {
+    const updatedTodos = todos.map(todo=>{
+      if(todo.id === id){
+        todo.completed = !todo.completed
+      }
+      return todo
+    })
+     setTodos(updatedTodos);
+    };
+    
 
   const removeTodo = (id) => {
     setTodos(todos.filter(todo => todo.id !== id));
@@ -70,9 +67,7 @@ const App = () => {
       <Button style={{marginTop:"40px", borderRadius: "20px"}} variant="contained" onClick={formShowHide} > {buttonText} </Button>      
       {viewForm && <TodoForm addTodo={addTodo} />}
 
-
-      { todos.length > 0 ? (<TodoList
-        title = " "
+      { todos.length > 0 ? (<TodoList        
         todos={todos.filter(todo => todo.completed === false)}
         removeTodo={removeTodo}
         toggleComplete={toggleComplete}
@@ -81,8 +76,7 @@ const App = () => {
 
      <Button style={{marginTop:"40px", borderRadius: "20px"}} variant="contained" onClick={showHide}> {buttonComplete} Completed task </Button>
 
-     {view && (<TodoList
-        title = " "
+     {view && (<TodoList        
         todos={todos.filter(todo => todo.completed === true)}
         removeTodo={removeTodo}
         toggleComplete={toggleComplete}

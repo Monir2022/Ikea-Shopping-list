@@ -2,18 +2,12 @@ import { Checkbox, IconButton, ListItem, Typography } from "@material-ui/core";
 import Delete from "@mui/icons-material/Delete";
 import React from "react";
 
-const Todo= ({ todo, toggleComplete, removeTodo })=> {
-  const handleCheckboxClick = () => {
-    toggleComplete(todo.id);
-  }
+const Todo= ({ todo, toggleComplete, removeTodo })=> {  
 
-  const handleRemoveClick = ()=> {
-    removeTodo(todo.id);
-  }
-  
+    
   return (
     <ListItem >
-      <Checkbox checked={todo.completed} onClick={handleCheckboxClick} />
+      <Checkbox checked={todo.completed} onClick={()=>{toggleComplete(todo.id)}} />
       <Typography
         variant="body1"
         style={{
@@ -22,7 +16,7 @@ const Todo= ({ todo, toggleComplete, removeTodo })=> {
       >
          {todo.task}:{todo.price} SEK        
       </Typography>
-      <IconButton onClick={handleRemoveClick}>
+      <IconButton onClick={()=>{removeTodo(todo.id)}}>
         <Delete/>
       </IconButton>
     </ListItem>
