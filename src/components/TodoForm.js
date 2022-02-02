@@ -10,9 +10,7 @@ const TodoForm =({ addTodo }) => {
     completed: false,
   });
 
-  const handleTaskInputChange=(e) => {
-    // e.target.value contains new input from onChange
-    // event for input elements
+  const handleTaskInputChange=(e) => {    
     setTodo({ ...todo, task: e.target.value });
   }
 
@@ -21,18 +19,13 @@ const TodoForm =({ addTodo }) => {
     if(e.target.value > 0){
       setTodo({ ...todo, price: e.target.value });
     } else 
-         alert("Price need to be a positive number")
-      
-      
-    // e.target.value contains new input from onChange
-    // event for input elements
-     
+         alert("Price need to be a positive number")     
+          
   }
 
 
   const handleSubmit=(e) => {
-    e.preventDefault(); // prevents browser refresh
-    // trim() gets rid of string whitespace
+    e.preventDefault(); 
     if (todo.task.trim() && todo.price.trim()) {
       addTodo({ ...todo, id: uuid() });
       setTodo({ ...todo, task: "", price: "" });

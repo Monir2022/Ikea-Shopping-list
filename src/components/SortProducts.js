@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from "@material-ui/core";
 
 
 
@@ -32,8 +33,8 @@ const SortProducts = ({todos, setTodos}) => {
 
     return (
         <div>
-            <button onClick={OnclickForName} > Sort by Name </button>
-            <button onClick={OnClickForPrice}> Sort by Price </button>
+            <Button style={{margin:"20px", borderRadius: "20px", textDecoration: "underline"}} variant="contained" onClick={OnclickForName} > Sort by Name </Button>
+            <Button style={{margin:"20px", borderRadius: "20px", textDecoration: "underline"}} variant="contained" onClick={OnClickForPrice}> Sort by Price </Button>
         </div>
     );
 };
