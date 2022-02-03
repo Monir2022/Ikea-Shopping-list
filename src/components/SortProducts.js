@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from "@material-ui/core";
-
+import "../App.css";
 
 
 const SortProducts = ({todos, setTodos}) => {
@@ -33,8 +33,8 @@ const SortProducts = ({todos, setTodos}) => {
 
     return (
         <div>
-            <Button style={{margin:"20px", borderRadius: "20px", textDecoration: "underline"}} variant="contained" onClick={OnclickForName} > Sort by Name </Button>
-            <Button style={{margin:"20px", borderRadius: "20px", textDecoration: "underline"}} variant="contained" onClick={OnClickForPrice}> Sort by Price </Button>
+            <Button className="sort"  variant="contained" onClick={OnclickForName} > Sort by Name </Button>
+            <Button className="sort"  variant="contained" onClick={OnClickForPrice}> Sort by Price</Button>
         </div>
     );
 };

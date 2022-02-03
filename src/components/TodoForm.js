@@ -10,8 +10,8 @@ const TodoForm =({ addTodo }) => {
     completed: false,
   });
 
-  const handleTaskInputChange=(e) => {    
-    setTodo({ ...todo, task: e.target.value });
+  const handleTaskInputChange=(e) => {     
+    setTodo({ ...todo, task: e.target.value });    
   }
 
   const handlePriceInputChange = (e)=> {
