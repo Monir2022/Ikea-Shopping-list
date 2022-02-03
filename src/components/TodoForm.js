@@ -28,9 +28,10 @@ const TodoForm =({ addTodo }) => {
     e.preventDefault(); 
     if (todo.task.trim() && todo.price.trim()) {
       addTodo({ ...todo, id: uuid() });
-      setTodo({ ...todo, task: "", price: "" });
-      
+      setTodo({ ...todo, task: " ", price: "" });      
     }
+    else
+        alert("You need to fillup both the fields")
   }
 
   return (
