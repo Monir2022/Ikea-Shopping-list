@@ -6,7 +6,6 @@ import TodoList from "./components/TodoList";
 import Button from "@mui/material/Button";
 import SortProducts from "./components/SortProducts";
 
-
 const App = () => {
   const [todos, setTodos] = useState([]);
   const [viewForm, setViewForm] = useState(false);

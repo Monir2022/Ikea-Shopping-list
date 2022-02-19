@@ -1,8 +1,8 @@
 import { Button, TextField } from "@material-ui/core";
 import React, { useState } from "react";
-import {v1 as uuid} from "uuid";
+import { v1 as uuid } from "uuid";
 
-const TodoForm =({ addTodo }) => {
+const TodoForm = ({ addTodo }) => {
   const [todo, setTodo] = useState({
     id: "",
     task: "",
@@ -10,29 +10,23 @@ const TodoForm =({ addTodo }) => {
     completed: false,
   });
 
-  const handleTaskInputChange=(e) => {     
-    setTodo({ ...todo, task: e.target.value });    
-  }
+  const handleTaskInputChange = (e) => {
+    setTodo({ ...todo, task: e.target.value });
+  };
 
-  const handlePriceInputChange = (e)=> {
-
-    if(e.target.value > 0){
+  const handlePriceInputChange = (e) => {
+    if (e.target.value > 0) {
       setTodo({ ...todo, price: e.target.value });
-    } else 
-         alert("Price need to be a positive number")     
-          
-  }
+    } else alert("Price need to be a positive number");
+  };
 
-
-  const handleSubmit=(e) => {
-    e.preventDefault(); 
+  const handleSubmit = (e) => {
+    e.preventDefault();
     if (todo.task.trim() && todo.price.trim()) {
       addTodo({ ...todo, id: uuid() });
-      setTodo({ ...todo, task: " ", price: "" });      
-    }
-    else
-        alert("You need to fillup both the fields")
-  }
+      setTodo({ ...todo, task: " ", price: "" });
+    } else alert("You need to fillup both the fields");
+  };
 
   return (
     <form className="todo-form" onSubmit={handleSubmit}>
@@ -53,6 +47,6 @@ const TodoForm =({ addTodo }) => {
       <Button type="submit">Add to the list</Button>
     </form>
   );
-}
+};
 
 export default TodoForm;
