@@ -27,15 +27,6 @@ const App = () => {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos));       
   },[todos]);
 
-/* 
-const addTodo = (todo) => {
-  const updatedTodo = [...todos, todo];
-  setTodos(updatedTodo)
-}
-
-*/
-
-
   const addTodo =(todo) => { 
     let checked= true;
     todos.forEach(td=>{
