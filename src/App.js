@@ -9,9 +9,7 @@ import SortProducts from "./components/SortProducts";
 const App = () => {
   const [todos, setTodos] = useState([]);
   const [viewForm, setViewForm] = useState(false);
-  const [buttonText, setButtonText] = useState(
-    "View Form to Add Item on the list"
-  );
+  const [buttonText, setButtonText] = useState("View Form to Add Item on the list");
   const [view, setview] = useState(false);
   const [buttonComplete, setButtonComplete] = useState("Show");
 
@@ -76,9 +74,8 @@ const App = () => {
         style={{ marginTop: "40px", borderRadius: "20px" }}
         variant="contained"
         onClick={formShowHide}
-      >
-        {" "}
-        {buttonText}{" "}
+      >       
+        {buttonText}
       </Button>
       {viewForm && <TodoForm addTodo={addTodo} />}
 
