@@ -19,6 +19,7 @@ const Todo= ({ todo, toggleComplete, removeTodo })=> {
       <IconButton onClick={()=>{removeTodo(todo.id)}}>
         <Delete/>
       </IconButton>
+      <img src={imageURL} alt="Thumbnail of the product" />
     </ListItem>
   );
 }
