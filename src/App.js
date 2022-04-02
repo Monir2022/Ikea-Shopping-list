@@ -26,25 +26,17 @@ const App = () => {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos));
   }, [todos]);
 
-  const addTodo = (todo) => {
-    let checked = true;
-    todos.forEach((td) => {
-      if (td.task === todo.task) {
-        checked = false;
-        alert("This item is already on the list");
-      }
-    });
-    if (checked) {
-      const updatedTodos = [...todos, todo];
-      setTodos(updatedTodos);
-    }
-  };
+ function addTodo(todo){
+  const updatedTodos = [...todos, todo];
+  setTodos(updatedTodos);
+ }
 
-  const removeTodo = (id) => {
-    const updatedTodos = todos.filter((todo) => todo.id !== id);
-    setTodos(updatedTodos);
-  };
+ function removeTodo(id){
+  const updatedTodos = todos.filter((todo) => todo.id !== id);
+  setTodos(updatedTodos);
+ }
 
+  
   const toggleComplete = (id) => {
     const updatedTodos = todos.map((todo) => {
       if (todo.id === id) {

@@ -3,7 +3,7 @@ import { Button } from "@material-ui/core";
 import "../App.css";
 
 
-const SortProducts = ({todos, setTodos}) => {
+export default function SortProducts({todos, setTodos}){
 
     const OnclickForName = () => {
         const products = [...todos]
@@ -38,5 +38,3 @@ const SortProducts = ({todos, setTodos}) => {
         </div>
     );
 };
-
-export default SortProducts;
