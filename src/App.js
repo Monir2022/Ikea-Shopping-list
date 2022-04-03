@@ -5,7 +5,7 @@ import TodoForm from "./components/TodoForm";
 import TodoList from "./components/TodoList";
 import Button from "@mui/material/Button";
 import SortProducts from "./components/SortProducts";
-
+import "./styles/style.css";
 const App = () => {
   const [todos, setTodos] = useState([]);
   const [viewForm, setViewForm] = useState(false);
@@ -21,6 +21,7 @@ const App = () => {
       setTodos(storageTodos);
     }
   }, []);
+  
 
   useEffect(() => {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos));
